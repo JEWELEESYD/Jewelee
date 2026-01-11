@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주얼리 캐드 생산 & 가견적 서비스 | (당신의 브랜드명)</title>
+    <meta name="description" content="고객 맞춤 주얼리 캐드 파일 업로드 및 실시간 가견적을 받아보세요. 14K, 18K, PT950 등 다양한 금속으로 당신의 디자인을 현실로 만듭니다.">
+    <style>
+        /* 기본 스타일 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* 상단 정렬 */
+            min-height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        p {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .form-section {
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+        }
+        /* 폼 스타일 */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            color: #444;
+        }
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+            font-size: 1em;
+        }
+        input[type="file"] {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        textarea {
+            resize: vertical; /* 세로 크기 조절 가능 */
+            min-height: 100px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            width: auto; /* 너비 자동 */
+            align-self: center; /* 가운데 정렬 */
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .info-box {
+            background-color: #e9f7ff;
+            border: 1px solid #b3e0ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 25px;
+            font-size: 0.95em;
+            color: #0056b3;
+            text-align: left;
+        }
+        .info-box ul {
+            margin: 10px 0 0 20px;
+            padding: 0;
+        }
+        .info-box li {
+            margin-bottom: 5px;
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #777;
+            font-size: 0.9em;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .coming-soon {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #d9534f;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>(당신의 브랜드명) 맞춤 주얼리 생산 & 가견적 서비스</h1>
+        <p>캐드(CAD) 파일을 업로드하고, 원하는 금속 및 옵션을 선택하여 빠르고 편리하게 가견적을 받아보세요.</p>
+        <p>전문 디자이너와 장인이 당신의 아이디어를 정교한 주얼리로 만들어 드립니다.</p>
+
+        <div class="info-box">
+            <h3>📌 가견적 절차 안내</h3>
+            <ul>
+                <li>아래 양식에 정보를 입력하고 캐드 파일을 업로드해 주세요.</li>
+                <li>접수 후, 담당자가 파일을 확인하여 정확한 견적을 산출합니다.</li>
+                <li>최종 견적은 이메일 또는 유선으로 안내 드립니다.</li>
+                <li>현재는 수동 견적이며, **빠른 시일 내 자동 가견적 시스템이 오픈됩니다!**</li>
+            </ul>
+        </div>
+
+        <div class="form-section">
+            <h2>견적 문의 양식</h2>
+            <form action="#" method="POST" enctype="multipart/form-data" id="inquiryForm">
+                <label for="name">성함:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">이메일:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">연락처:</label>
+                <input type="text" id="phone" name="phone" placeholder="010-XXXX-XXXX">
+
+                <label for="metalType">금속 종류:</label>
+                <select id="metalType" name="metalType" required>
+                    <option value="">선택하세요</option>
+                    <option value="14K_Yellow">14K 옐로우골드</option>
+                    <option value="14K_White">14K 화이트골드</option>
+                    <option value="18K_Yellow">18K 옐로우골드</option>
+                    <option value="18K_White">18K 화이트골드</option>
+                    <option value="PT950">플래티넘(PT950)</option>
+                    <option value="Silver925">실버(Silver925)</option>
+                    <option value="other">기타</option>
+                </select>
+
+                <label for="cadFile">캐드 파일 업로드 (.stl, .obj, .3dm 등):</label>
+                <input type="file" id="cadFile" name="cadFile" accept=".stl,.obj,.3dm,.stp,.step" required>
+                <small>최대 20MB, 다중 파일 업로드는 압축하여 올려주세요.</small>
+
+                <label for="notes">추가 요청 사항 (보석 세팅, 표면 처리, 마감 등):</label>
+                <textarea id="notes" name="notes" rows="5" placeholder="예: 큐빅 세팅 예정, 무광 마감 원합니다."></textarea>
+
+                <p class="coming-soon">제출 버튼은 현재 비활성화되어 있습니다. <br>곧 Tally.so 같은 외부 폼 서비스와 연결하여 사용하실 수 있습니다!</p>
+                <button type="submit" disabled>견적 문의 접수 (현재 비활성)</button>
+            </form>
+            <script>
+                // 실제 폼 데이터를 처리하는 백엔드가 없으므로 제출 버튼을 비활성화합니다.
+                // 이 스크립트는 단순히 보여주기 위한 것으로, 실제 폼 연동 시에는 삭제됩니다.
+                document.addEventListener('DOMContentLoaded', function() {
+                    const submitButton = document.querySelector('#inquiryForm button[type="submit"]');
+                    if (submitButton) {
+                        submitButton.setAttribute('disabled', 'true');
+                        submitButton.style.opacity = '0.6';
+                        submitButton.style.cursor = 'not-allowed';
+                    }
+                });
+            </script>
+        </div>
+
+        <footer>
+            &copy; 2023 (당신의 브랜드명). All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
